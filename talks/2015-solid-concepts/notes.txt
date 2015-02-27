@@ -1,0 +1,11 @@
+class Customer
+    var firstname
+    var lastname
+    var plz
+    # ...
+    def printName:
+        print firstname + " " + lastname
+    
+    def getSortName:
+        return lastname + "," + firstname
+

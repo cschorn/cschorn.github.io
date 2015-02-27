@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+
+    <title>SOLID</title>
+
+    <!-- Required stylesheet -->
+    <link rel="stylesheet" media="screen" href="core/deck.core.css">
+    <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+
+    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+    <!-- Basic black and white print styles -->
+    <link rel="stylesheet" media="print" href="core/print.css">
+
+    <!-- Required Modernizr file -->
+    <script src="modernizr.custom.js"></script>
+</head>
+<body>
+    <div class="deck-container">
+        <section class="slide" id="title-slide">
+            <h1>SOLID</h1>
+        </section>
+
+        <section class="slide">
+            <h2>Worum geht es?</h2>
+            <ul>
+                <li>Schnelle Reaktion auf Veränderungen</li>
+                <li>Wartbarkeit</li>
+                <li>Erweiterbarkeit</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>Wie soll das gehen?</h2>
+            <ul>
+                <li>Modularität (Separation of Concerns)</li>
+                <li>Komponenten so weit wie möglich isolieren</li>
+                <li>Änderungen sollen möglichst lokal bleiben</li>
+                <li>Vorhersagen über das Verhalten des restlichen Systems sollten möglich sein</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>Kontext</h2>
+            <ul>
+                <li>OOP</li>
+                <li>Klassenbasiert</li>
+                <li>Einfache Vererbung</li>
+                <li>Veränderliche Objekte</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>Single Responsibility Principle</h2>
+            <blockquote>
+                <p>Es sollte nie mehr als einen Grund dafür geben, eine Klasse zu ändern.</p>
+                <cite>Robert C. Martin</cite>
+            </blockquote>
+        </section>
+
+        <section class="slide">
+            <h2>Single Responsibility Principle</h2>
+            <ul>
+                <li>Methoden haben Zugriff auf alle Instanzvariablen</li>
+                <li>Mögliche Interaktion mit anderen Bereichen des Programms</li>
+                <li>Hohe Kopplung</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>Open/Closed Principle</h2>
+            <blockquote>
+                <p>Module sollten sowohl offen (für Erweiterungen), als auch geschlossen (für Modifikationen) sein.</p>
+                <cite>Bertrand Meyer</cite>
+            </blockquote>
+        </section>
+
+        <section class="slide">
+            <h2>Open/Closed Principle</h2>
+            <ul>
+                <li>Original: Vererbung</li>
+                <li>Modifiziert: Interface oder ABC statt Implementierung</li>
+                <li>Patterns: Template Method, Strategy, Observer, Decorator</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>Liskov Substitution Principle</h2>
+            <blockquote>
+                <p>Sei q(x) eine Eigenschaft des Objektes x vom Typ T, dann sollte q(y) für alle Objekte y des Typs S gelten, wobei S ein Subtyp von T ist.</p>
+                <cite>Barbara H. Liskov</cite>
+            </blockquote>
+        </section>
+
+        <section class="slide">
+            <h2>Liskov Substitution Principle</h2>
+            <ul>
+                <li>Basisklasse muss <strong>immer</strong> durch Kindklasse ersetzt werden können</li>
+                <li>Kindklasse darf das Verhalten der Elternklasse nicht einschränken</li>
+                <li>Gilt auch für <strong>Parameter</strong> und <strong>Rückgabewerte</strong></li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>Interface Segregation</h2>
+            <blockquote>
+                <p>Clients sollten nicht dazu gezwungen werden, von Interfaces abzuhängen, die sie nicht verwenden</p>
+                <cite>Robert C. Martin</cite>
+            </blockquote>
+        </section>
+
+        <section class="slide">
+            <h2>Interface Segregation</h2>
+            <ul>
+                <li>Kopplung an alle Methoden</li>
+                <li>Lieber mehrere kleine Interfaces</li>
+                <li>Zu viele Interfaces? Eventuell SRP-Verstoß</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>Dependency Inversion</h2>
+            <blockquote>
+                <p>Module höherer Ebenen sollten nicht von Modulen niedrigerer Ebenen abhängen.<br>
+                    Beide sollten von Abstraktionen abhängen.</p>
+                <p>Abstraktionen sollten nicht von Details abhängen.<br>
+                    Details sollten von Abstraktionen abhängen.</p>
+            </blockquote>
+        </section>
+        
+        <section class="slide">
+            <h2>Dependency Inversion</h2>
+            <ul>
+                <li>Nicht <strong>Injection</strong>!</li>
+                <li>Konkrete Klassen hängen immer von Abstraktionen ab</li>
+                <li><strong>Alle</strong> Instanzvariablen, Parameter, Rückgabewerte sind abstrakt</li>
+                <li>Konkrete Instanzen werden nur an <strong>einer</strong> Stelle erzeugt</li>
+                <li>Patterns: DI, Service Locator/Registry, Factory, Plugin, Mediator</li>
+            </ul>
+        </section>
+        
+        <section class="slide">
+            <h2>Mache ich später ...</h2>
+            <ul>
+                <li>Einzelkämpfer, Team</li>
+                <li>Applikations- vs. Bibliothekscode</li>
+                <li>Abhängigkeiten</li>
+                <li>"Omega Mess" (Sandi Metz)</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>Mache ich später ...</h2>
+            <blockquote>
+                <p>The Principle of Concentration of Ugliness: It's better to have all the feces in one pile instead of spread evenly everywhere.</p>
+                <cite><a href="https://twitter.com/KentBeck/status/306253689184739328">Kent Beck</a></cite>
+            </blockquote>
+        </section>
+        
+        <section class="slide">
+            <h2>Links</h2>
+            <h3>Artikel von Robert Martin:</h3>
+            <ul>
+                <li><a href="http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">Single Responsibility Principle</a></li>
+                <li><a href="http://www.objectmentor.com/resources/articles/ocp.pdf">Open/Closed Principle</a></li>
+                <li><a hraf="http://www.objectmentor.com/resources/articles/lsp.pdf">The Liskov Substitution Principle</a></li>
+                <li><a href="http://www.objectmentor.com/resources/articles/isp.pdf">Interface Segregation Principle</a></li>
+                <li><a href="http://www.objectmentor.com/resources/articles/dip.pdf">Dependency Inversion</a></li>
+            </ul>
+            <h3>Mehr zum Thema:</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=z_LxkB-Pgf0">Don't Be STUPID Grasp SOLID</a> - Talk von <a href="http://blog.ircmaxell.com">Anthony Ferrara</a></li>
+                <li><a href="https://www.youtube.com/watch?v=f5I1iyso29U">Go Ahead, Make a Mess</a> - Talk von <a href="http://www.sandimetz.com">Sandi Metz</a></li>
+            </ul>
+        </section>
+        
+        <section class="slide">
+            <h2>Danke!</h2>
+            <ul>
+                <li>Christian Schorn</li>
+                <li>Twitter: <a href="https://twitter.com/cschorn">@cschorn</a></li>
+                <li>Mail: <a href="mailto:me@cschorn.de">me@cschorn.de</a></li>
+                <li>Web: <a href="http://cschorn.de">cschorn.de</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Required JS files. -->
+    <script src="jquery.min.js"></script>
+    <script src="core/deck.core.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
